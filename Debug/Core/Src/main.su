@@ -1,0 +1,15 @@
+main.c:101:6:init_Connection	144	static
+main.c:192:6:HAL_UART_RxCpltCallback	16	static
+main.c:206:5:main	8	static
+main.c:254:6:SystemClock_Config	88	static
+main.c:293:13:MX_SPI1_Init	8	static
+main.c:331:13:MX_USART2_UART_Init	8	static
+main.c:364:13:MX_GPIO_Init	48	static
+main.c:397:6:UART_Printf	272	static
+main.c:407:8:select_CS	8	static
+main.c:411:8:unselect_CS	8	static
+main.c:415:8:read_Buff	16	static
+main.c:419:8:write_Buff	16	static
+main.c:423:11:read_Byte	16	static
+main.c:429:8:write_Byte	16	static
+main.c:439:6:Error_Handler	4	static
