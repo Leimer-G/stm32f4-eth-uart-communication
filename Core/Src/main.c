@@ -127,6 +127,12 @@ void param_Connection() {
 }
 
 void conectar_Socket_UDP(uint8_t socketNum, uint16_t portLocal){
+	/**Es necesario enviar un dato por socket debido:
+	 * A que es necesario una IP de destino
+	 * Al recibir un mensaje por socket este obtiene la IP y la guarda
+	 * Se podria omitir este paso asignando una IP fija para ip Destination
+	 * 		ejm ->uint8_t ipDestination[4] = {192.168.0.50}; // IP PC
+	 */
 	if((retVal = socket(socketNum, Sn_MR_UDP, portLocal, 0)) == 0){
 		uint8_t ipDestination[4];
 		uint16_t portDestination;
@@ -304,6 +310,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  /*Configura parametros iniciales para W5500*/
   param_Connection();
 
   while (1)
@@ -311,8 +318,12 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  /*Descomentar para conexion UDP*/
 	  conectar_Socket_TCP(SOCKET_NUMBER, PORT_NUMBER);
+	  /*Descomentar para conexion TCP*/
 //	  conectar_Socket_UDP(SOCKET_NUMBER, PORT_NUMBER);
+	  /*Nota. No descomentar los ambos*/
   }
   /* USER CODE END 3 */
 }

@@ -7177,23 +7177,23 @@ OUTPUT(stm32f4-eth-uart-communication.elf elf32-littlearm)
  .debug_macro   0x0000000000020f88       0x66 ioLibrary_Driver/Ethernet/socket.o
  .debug_macro   0x0000000000020fee       0x94 ioLibrary_Driver/Ethernet/wizchip_conf.o
 
-.debug_line     0x0000000000000000     0x8aba
- .debug_line    0x0000000000000000      0xb7a Core/Src/main.o
- .debug_line    0x0000000000000b7a      0x708 Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x0000000000001282      0x75d Core/Src/stm32f4xx_it.o
- .debug_line    0x00000000000019df      0x55e Core/Src/sysmem.o
- .debug_line    0x0000000000001f3d      0x6c2 Core/Src/system_stm32f4xx.o
- .debug_line    0x00000000000025ff       0x85 Core/Startup/startup_stm32f407vgtx.o
- .debug_line    0x0000000000002684      0x8ac Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x0000000000002f30      0x9d0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x0000000000003900      0x97a Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
- .debug_line    0x000000000000427a      0x88b Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x0000000000004b05      0x904 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_line    0x0000000000005409     0x1068 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_line    0x0000000000006471      0xfba Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
- .debug_line    0x000000000000742b      0x574 ioLibrary_Driver/Ethernet/W5500/w5500.o
- .debug_line    0x000000000000799f      0x8cb ioLibrary_Driver/Ethernet/socket.o
- .debug_line    0x000000000000826a      0x850 ioLibrary_Driver/Ethernet/wizchip_conf.o
+.debug_line     0x0000000000000000     0x8abc
+ .debug_line    0x0000000000000000      0xb7c Core/Src/main.o
+ .debug_line    0x0000000000000b7c      0x708 Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x0000000000001284      0x75d Core/Src/stm32f4xx_it.o
+ .debug_line    0x00000000000019e1      0x55e Core/Src/sysmem.o
+ .debug_line    0x0000000000001f3f      0x6c2 Core/Src/system_stm32f4xx.o
+ .debug_line    0x0000000000002601       0x85 Core/Startup/startup_stm32f407vgtx.o
+ .debug_line    0x0000000000002686      0x8ac Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x0000000000002f32      0x9d0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x0000000000003902      0x97a Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
+ .debug_line    0x000000000000427c      0x88b Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x0000000000004b07      0x904 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_line    0x000000000000540b     0x1068 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_line    0x0000000000006473      0xfba Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_line    0x000000000000742d      0x574 ioLibrary_Driver/Ethernet/W5500/w5500.o
+ .debug_line    0x00000000000079a1      0x8cb ioLibrary_Driver/Ethernet/socket.o
+ .debug_line    0x000000000000826c      0x850 ioLibrary_Driver/Ethernet/wizchip_conf.o
 
 .debug_str      0x0000000000000000    0xc7836
  .debug_str     0x0000000000000000    0xc46a2 Core/Src/main.o

@@ -204,6 +204,12 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  ```
  - Funcion de ejemplo para conexion UDP
  ```C++
+	/**Es necesario enviar un dato por socket debido:
+	 * A que es necesario una IP de destino
+	 * Al recibir un mensaje por socket este obtiene la IP y la guarda
+	 * Se podria omitir este paso asignando una IP fija para ip Destination
+	 * 		ejm ->uint8_t ipDestination[4] = {192.168.0.50}; // IP PC
+	 */
  void conectar_Socket_UDP(uint8_t socketNum, uint16_t portLocal){
  /*Abra el socket 0 como TCP_SOCKET con el   puerto 5000*/
 	if((retVal = socket(socketNum, Sn_MR_UDP, portLocal, 0)) == 0){
@@ -266,6 +272,16 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
 }
  ```
 ## Resultados
+
+Para la conexion asignar IP estatica a la PC que este dentro del rango de IP configuradas en chip W5500 variable net_info.  
+Abrir puerto Com respectivo en Tera Term;  
+En Hercules seleccionar UPD o TCP dependiento de la funcion de Socket llamada:  
+```C++
+conectar_Socket_TCP(SOCKET_NUMBER, PORT_NUMBER);
+conectar_Socket_UDP(SOCKET_NUMBER, PORT_NUMBER);
+```
+y asignar la ip configurada en variable net_info con su puerto respectivo -> PORT_NUMBER
+
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/74838411/110888340-f66f9300-82b9-11eb-9be1-ea49f4bf7c1a.gif)
 

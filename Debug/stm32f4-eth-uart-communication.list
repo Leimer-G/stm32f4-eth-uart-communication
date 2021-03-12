@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  00021082  00000000  00000000  0002e708  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   00008aba  00000000  00000000  0004f78a  2**0
+ 17 .debug_line   00008abc  00000000  00000000  0004f78a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000c7836  00000000  00000000  00058244  2**0
+ 18 .debug_str    000c7836  00000000  00000000  00058246  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  0011fa7a  2**0
+ 19 .comment      0000007b  00000000  00000000  0011fa7c  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00003054  00000000  00000000  0011faf8  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -1137,13 +1137,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  /*Configura parametros iniciales para W5500*/
   param_Connection();
  8000aaa:	f7ff fd69 	bl	8000580 <param_Connection>
-  while (1)
-  {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  /*Descomentar para conexion UDP*/
 	  conectar_Socket_TCP(SOCKET_NUMBER, PORT_NUMBER);
  8000aae:	f241 3188 	movw	r1, #5000	; 0x1388
  8000ab2:	2000      	movs	r0, #0
