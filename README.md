@@ -273,9 +273,9 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  ```
 ## Resultados
 
-Para la conexion asignar IP estatica a la PC que este dentro del rango de IP configuradas en chip W5500 variable net_info.  
-Abrir puerto Com respectivo en Tera Term;  
-En Hercules seleccionar UPD o TCP dependiento de la funcion de Socket llamada:  
+1. Para la conexion asignar IP estatica a la PC que este dentro del rango de IP configuradas en chip W5500 variable net_info.  
+2. Abrir puerto Com respectivo en Tera Term.
+3. En Hercules seleccionar UPD o TCP dependiento de la funcion de Socket llamada:  
 ```C++
 conectar_Socket_TCP(SOCKET_NUMBER, PORT_NUMBER);
 conectar_Socket_UDP(SOCKET_NUMBER, PORT_NUMBER);
