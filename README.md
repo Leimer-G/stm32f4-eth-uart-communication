@@ -123,9 +123,9 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
   }
   ```
   
-  #### Configuracion WHIZCHIP 
+  #### Configuracion WIZCHIP 
   
-  - Registramos la función de devolución de llamada para seleccionar y desseleccionar WHIZCHIP.
+  - Registramos la función de devolución de llamada para seleccionar y desseleccionar WIZCHIP.
  ```C++
  reg_wizchip_cs_cbfunc(select_CS, unselect_CS);
  ```
@@ -169,7 +169,7 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  int32_t send(uint8_t sn, uint8_t * buf, uint16_t len); /*Envias datos al par conectado. Solo modo cliente o servidor TCP.*/
  int32_t recv(uint8_t sn, uint8_t * buf, uint16_t len) /*Reciba datos del par conectado. Solo modo cliente o servidor TCP.*/
  ```
- - UDT funciones para envio y recepcion
+ - UDP funciones para envio y recepcion
  ```C++
  int32_t sendto(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t port); /*Envía un datagrama de UDP o MACRAW*/
  int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t *port) /*Reciba datagrama de UDP o MACRAW*/
@@ -239,4 +239,5 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  ```
 ## Resultados
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/74838411/110888340-f66f9300-82b9-11eb-9be1-ea49f4bf7c1a.gif)
 
