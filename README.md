@@ -155,17 +155,25 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  ```C++
  /*uint8_t sn -> numero del socket para el caso del chip W5500 va de 0~4*/
  
- /*Crea el socket ejemplo-> socket(0, Sn_MR_TCP, 5000, 0))-> Abra el socket 0 como TCP_SOCKET con el   puerto 5000 */
+ /**Crea el socket ejemplo-> 
+  *socket(0, Sn_MR_TCP, 5000, 0))-> Abra el socket 0 como TCP_SOCKET con el   puerto 5000 
+  */
  int8_t socket(uint8_t sn, uint8_t protocol, uint16_t port, uint8_t flag);
- /* Ponga el Socket en modo ESCUCHAR. Esto significa que estamos creando un servidor TCP. */
+ /* Ponga el Socket en modo ESCUCHAR. 
+  *Esto significa que estamos creando un servidor TCP. 
+  */
  int8_t listen(uint8_t sn);
  /*Obtenga la opción de socket como FLAG, TTL, MSS, etc. Consulte @ref sockopt_type*/
  int8_t  getsockopt(uint8_t sn, sockopt_type sotype, void* arg); 
  /*Retorna el registro de tamaño de datos recibidos (R)*/
  uint16_t getSn_RX_RSR(uint8_t sn); 
- /*Configura o indica la dirección IP de destino del Socket n. Es válido cuando se utiliza Socket n en modo TCP / UDP.*/
+ /*Configura o indica la dirección IP de destino del Socket n. 
+  *Es válido cuando se utiliza Socket n en modo TCP / UDP.
+  */
  getSn_DIPR(sn, dipr); 
- /*Configura o indica el número de puerto de destino del Socket n. Es válido cuando se utiliza Socket n en modo TCP / UDP.*/
+ /*Configura o indica el número de puerto de destino del Socket n. 
+  *Es válido cuando se utiliza Socket n en modo TCP / UDP.
+  */
  getSn_DPORT(sn); 
  /** Retorna el registro de estado del socket (R) , 
   * ejemplo -> Return : SOCK_LISTEN ->Modo Escucha, SOCK_ESTABLISHED -> Conexion Establecida, 
