@@ -240,7 +240,7 @@ int8_t close(uint8_t sn)
 int8_t listen(uint8_t sn)
 {
 	CHECK_SOCKNUM();
-   CHECK_SOCKMODE(Sn_MR_TCP);
+    CHECK_SOCKMODE(Sn_MR_TCP);
 	CHECK_SOCKINIT();
 	setSn_CR(sn,Sn_CR_LISTEN);
 	while(getSn_CR(sn));
@@ -427,7 +427,7 @@ int32_t recv(uint8_t sn, uint8_t * buf, uint16_t len)
             }
          }
          if((sock_io_mode & (1<<sn)) && (recvsize == 0)) return SOCK_BUSY;
-         if(recvsize >= 0) break;
+         if(recvsize != 0) break;
       };
 #if _WIZCHIP_ == 5300
    }
@@ -631,7 +631,7 @@ int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16
          pack_len = getSn_RX_RSR(sn);
          if(getSn_SR(sn) == SOCK_CLOSED) return SOCKERR_SOCKCLOSED;
          if( (sock_io_mode & (1<<sn)) && (pack_len == 0) ) return SOCK_BUSY;
-         if(pack_len >= 0) break;
+         if(pack_len != 0) break;
       };
    }
 //D20150601 : Move it to bottom
