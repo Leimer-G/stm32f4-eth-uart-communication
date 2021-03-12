@@ -1,0 +1,194 @@
+[33mcommit 9b5602082969fd08d7980df340ae1e259e9bfcb5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 2b54ef0 ce71279
+Author: Leimer <lguambanac@gmail.com>
+Date:   Thu Mar 11 20:25:10 2021 -0500
+
+    cambios
+
+[33mcommit 2b54ef0d1386c34180386353129597186ba0c497[m
+Author: Leimer <lguambanac@gmail.com>
+Date:   Thu Mar 11 20:11:30 2021 -0500
+
+    remuevo pin de led
+
+[33mcommit f6f1ca897afbf8354f549c3491db08f5f67f0c14[m
+Author: Leimer <lguambanac@gmail.com>
+Date:   Thu Mar 11 19:57:29 2021 -0500
+
+    añadido socket udp, cambio de funcion UART_Printf
+
+[33mcommit ce71279a780c758d3fc164a8c639bfe9b5833f5a[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 19:02:38 2021 -0500
+
+    Update README.md
+
+[33mcommit 70c8c131abb9a138cddbd35d6885e3b86642818c[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 19:00:35 2021 -0500
+
+    Update README.md
+
+[33mcommit 49ff39a2ca3e6e5e002d5cc179a21b2662e7fc00[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 18:59:03 2021 -0500
+
+    Update README.md
+
+[33mcommit 095626349736e433bee547db463a3940e288aa5c[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 18:53:22 2021 -0500
+
+    Update README.md
+
+[33mcommit 6c70108395f011bee19270a28ece0a756f526b90[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 18:50:01 2021 -0500
+
+    Update README.md
+
+[33mcommit cf2e3c02e3a36522381eedf2c3e3631c41dcf41c[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 18:47:53 2021 -0500
+
+    Update README.md
+
+[33mcommit 2ab67545da2dcd92fdd0533b4dd110a32db197cf[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 18:09:44 2021 -0500
+
+    Update README.md
+
+[33mcommit ef999b1930c7b2294b332453da4e4afd83967623[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 17:29:08 2021 -0500
+
+    Update README.md
+
+[33mcommit b73a489a5be4ca51b739b880a2ee348a59c386f2[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:26:48 2021 -0500
+
+    Update README.md
+
+[33mcommit 6a0d88047e27dab685fe436c9ba01fc0d951e55c[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:23:14 2021 -0500
+
+    Update README.md
+
+[33mcommit f4327bdfa442ee188a2c3d60420e8e78566b73ff[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:19:55 2021 -0500
+
+    Update README.md
+
+[33mcommit 98e765afe24ffdd5465e59a8169dc57c082ac698[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:14:18 2021 -0500
+
+    Update README.md
+
+[33mcommit 488447fed0b42d2593e3d7b5ca8765f7a974a9c9[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:07:29 2021 -0500
+
+    Update README.md
+
+[33mcommit f483bbdbe1320abdacb799d0ea607969c7a16f73[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:05:14 2021 -0500
+
+    Update main.c
+
+[33mcommit 92e742ce8face7c4fcea58f53897fef92386840a[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 01:03:26 2021 -0500
+
+    Update README.md
+
+[33mcommit 6fb77c297790f81039b26a5ba420258e24f1e507[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 00:21:54 2021 -0500
+
+    Update main.c
+
+[33mcommit aaf5e01e367c9ac132f8b45bad4ab6d904ee5d8c[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Thu Mar 11 00:16:50 2021 -0500
+
+    Update main.c
+    
+    socket udp y tcp
+
+[33mcommit 1cba50763d0734628db26bcfd60d4b787e2bfebf[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 15:26:13 2021 -0500
+
+    Update README.md
+
+[33mcommit 2aea99213ec73255dc01bc23171a21aac06c13bd[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 15:23:44 2021 -0500
+
+    Update README.md
+
+[33mcommit a927ee7420006216f0c01d66a0e5f2a9b2528f33[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 15:14:16 2021 -0500
+
+    Update README.md
+
+[33mcommit 757dd6ca9005c5e37735020f55c18cadcfc0acaa[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 15:09:33 2021 -0500
+
+    Update README.md
+
+[33mcommit 21fd852e15f3a80428d44e5aa23ccc5027295f8f[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 14:44:44 2021 -0500
+
+    Update README.md
+
+[33mcommit 0e3febc04cc1946ad62df5b6f5fc187fbb9049e0[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 14:38:34 2021 -0500
+
+    Update README.md
+
+[33mcommit 1575b7afab6d1eee37ef1906d5002333b37f79d6[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 14:38:02 2021 -0500
+
+    Update README.md
+
+[33mcommit b0438748e5c10c2956e75245dc146205a7db3cf1[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 14:37:09 2021 -0500
+
+    Update README.md
+
+[33mcommit da6fa7de494368f5e78b83ecb1768270c55092c4[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 12:11:58 2021 -0500
+
+    Update README.md
+
+[33mcommit 0a18e9a9491699c7e3844ee9327ebdb07823949d[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 11:01:45 2021 -0500
+
+    Update README.md
+
+[33mcommit 27357be1df093e9591865e98acbc23dbe7eaa090[m
+Author: Leimer Guambaña <74838411+Leimer-G@users.noreply.github.com>
+Date:   Wed Mar 10 01:12:55 2021 -0500
+
+    Create README.md
+
+[33mcommit e0308ebebabc45c77092c1c3a27fd23de574cbce[m
+Author: Leimer <lguambanac@gmail.com>
+Date:   Wed Mar 10 01:02:56 2021 -0500
+
+    primer commit

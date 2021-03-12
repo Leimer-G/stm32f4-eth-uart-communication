@@ -3,6 +3,7 @@
   ******************************************************************************
   * @file           : main.c
   * @brief          : Main program body
+  * @autor          : Leimer Guambaña
   ******************************************************************************
   * @attention
   *
@@ -29,6 +30,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
+#include <stdarg.h>
 #include "stdio.h"
 
 #include "socket.h"
@@ -48,7 +50,6 @@
 #define SOCKET_NUMBER   0 //0-4
 #define RX_UART_BUFFER_RECEPTION     15
 #define RX_SOCKET_BUFFER_RECEPTION   15
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -126,7 +127,6 @@ void param_Connection() {
 }
 
 void conectar_Socket_UDP(uint8_t socketNum, uint16_t portLocal){
- /*Abra el socket 0 como TCP_SOCKET con el   puerto 5000*/
 	if((retVal = socket(socketNum, Sn_MR_UDP, portLocal, 0)) == 0){
 		uint8_t ipDestination[4];
 		uint16_t portDestination;
@@ -212,9 +212,10 @@ void conectar_Socket_TCP(uint8_t socketNum, uint16_t portLocal){
 							UART_Printf(buffer);
 						}
 					}
+
 					/* Enviamos mensaje recibido de Socket */
 					if((sockInterrupt = getSn_IR(socketNum)) == Sn_IR_CON){
-						sprintf(buffer, "Conexion con el Socket Exitosa!, Socket Interrupt Value: %d\r\n", sockInterrupt);
+						sprintf(buffer,"Conexion con el Socket Exitosa!, Socket Interrupt Value: %d\r\n", sockInterrupt);
 						UART_Printf(buffer);
 						setSn_IR(socketNum, Sn_IR_CON);
 					}else if(sockInterrupt == Sn_IR_RECV || sockInterrupt == (Sn_IR_RECV|Sn_IR_SENDOK) ){
@@ -236,19 +237,20 @@ void conectar_Socket_TCP(uint8_t socketNum, uint16_t portLocal){
 						}
 					}
 					HAL_Delay(500);
-				}else {
+				}else{
 					if(sockStatus == SOCK_CLOSE_WAIT) UART_Printf( "Socket cerrado\r\n");
-					else {
+					else{
 						sprintf(buffer, "Algo salio mal; Socket Status: %d\r\n", sockStatus); /* Algo salió mal con el par remoto, tal vez la conexión se cerró inesperadamente */
 						UART_Printf(buffer);
 					}
 					break;
 				}
 			}
-
-		} else UART_Printf("LISTEN¡ Error!\r\n"); /* Ops: el socket no está en modo ESCUCHAR. Algo salió mal */
-
-	} //else UART_Printf("Algo salió mal; Return Value:%d\r\n", retVal); /* No se puede abrir el Socket. Esto significa que algo está mal con la configuración del W5100: ¿tal vez un problema de SPI? */
+		}else UART_Printf("LISTEN¡ Error!\r\n"); /* Ops: el socket no está en modo ESCUCHAR. Algo salió mal */
+	}else{
+		sprintf(buffer, "Algo salió mal; Return Value:%d\r\n", retVal); /* No se puede abrir el Socket. Esto significa que algo está mal con la configuración del W5100: ¿tal vez un problema de SPI? */
+		UART_Printf(buffer);
+	}
 
 	/* Cerramos el socket y volvemos a iniciar una conexión. */
 	disconnect(socketNum);
@@ -309,9 +311,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  reconectar_Socket();
-//	  conectar_Socket_TCP(SOCKET_NUMBER, PORT_NUMBER);
-	  conectar_Socket_UDP(SOCKET_NUMBER, PORT_NUMBER);
+	  conectar_Socket_TCP(SOCKET_NUMBER, PORT_NUMBER);
+//	  conectar_Socket_UDP(SOCKET_NUMBER, PORT_NUMBER);
   }
   /* USER CODE END 3 */
 }
@@ -437,14 +438,10 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(Led1_GPIO_Port, Led1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : ETH_CS_Pin */
   GPIO_InitStruct.Pin = ETH_CS_Pin;
@@ -452,13 +449,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(ETH_CS_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : Led1_Pin */
-  GPIO_InitStruct.Pin = Led1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(Led1_GPIO_Port, &GPIO_InitStruct);
 
 }
 

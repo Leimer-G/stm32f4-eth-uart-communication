@@ -7,8 +7,14 @@ Este controlador proporciona las API de tipo Berkeley Socket.
 - Structura del Directorio
 <!-- ioLibrary pic -->
 ![ioLibrary](https://user-images.githubusercontent.com/74838411/110692443-50863080-81b4-11eb-863d-3eb237bfe6a2.PNG "ioLibrary")
+<<<<<<< HEAD
 
 ## Cómo agregar ioLibrary en tu proyecto
   - Ejemplo: https://github.com/Leimer-G/stm32f4-eth-uart-communication
     - Se muestra una explicacion de como usar ioLibrary en su proyecto usando STM32 Cube IDE
+=======
+>>>>>>> ce71279a780c758d3fc164a8c639bfe9b5833f5a
 
+## Cómo agregar ioLibrary en tu proyecto
+  - Ejemplo: https://github.com/Leimer-G/stm32f4-eth-uart-communication
+    - Se muestra una explicacion de como usar ioLibrary en su proyecto usando STM32 Cube IDE
