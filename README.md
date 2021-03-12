@@ -154,26 +154,45 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  - Descripcion general de funciones utilizadas 
  ```C++
  /*uint8_t sn -> numero del socket para el caso del chip W5500 va de 0~4*/
- int8_t socket(uint8_t sn, uint8_t protocol, uint16_t port, uint8_t flag)/*Crea el socket ejemplo-> socket(0, Sn_MR_TCP, 5000, 0))-> Abra el socket 0 como TCP_SOCKET con el   puerto 5000 */
- int8_t listen(uint8_t sn) /* Ponga el Socket en modo ESCUCHAR. Esto significa que estamos creando un servidor TCP. */
- int8_t  getsockopt(uint8_t sn, sockopt_type sotype, void* arg); /*Obtenga la opción de socket como FLAG, TTL, MSS, etc. Consulte @ref sockopt_type*/
- uint16_t getSn_RX_RSR(uint8_t sn) /*Retorna el registro de tamaño de datos recibidos (R)*/
- getSn_DIPR(sn, dipr) /*Configura o indica la dirección IP de destino del Socket n. Es válido cuando se utiliza Socket n en modo TCP / UDP.*/
- getSn_DPORT(sn) /*Configura o indica el número de puerto de destino del Socket n. Es válido cuando se utiliza Socket n en modo TCP / UDP.*/
- getSn_SR(uint8_t sn) /*Retorna el registro de estado del socket (R) , ejemplo -> Return : SOCK_LISTEN ->Modo Escucha, SOCK_ESTABLISHED -> Conexion Establecida, */ 
- getSn_IR(uint8_t sn) /*Retorna el registro de interrupción de socket (R) ejem -> Evento cuando recibio datos -> Return: Sn_IR_RECV*/
- disconnec(uint8_t sn) /*Desconectar socket de conexión.*/
- close(uint8_t sn) /*Cerrar socket.*/
+ 
+ /*Crea el socket ejemplo-> socket(0, Sn_MR_TCP, 5000, 0))-> Abra el socket 0 como TCP_SOCKET con el   puerto 5000 */
+ int8_t socket(uint8_t sn, uint8_t protocol, uint16_t port, uint8_t flag);
+ /* Ponga el Socket en modo ESCUCHAR. Esto significa que estamos creando un servidor TCP. */
+ int8_t listen(uint8_t sn);
+ /*Obtenga la opción de socket como FLAG, TTL, MSS, etc. Consulte @ref sockopt_type*/
+ int8_t  getsockopt(uint8_t sn, sockopt_type sotype, void* arg); 
+ /*Retorna el registro de tamaño de datos recibidos (R)*/
+ uint16_t getSn_RX_RSR(uint8_t sn); 
+ /*Configura o indica la dirección IP de destino del Socket n. Es válido cuando se utiliza Socket n en modo TCP / UDP.*/
+ getSn_DIPR(sn, dipr); 
+ /*Configura o indica el número de puerto de destino del Socket n. Es válido cuando se utiliza Socket n en modo TCP / UDP.*/
+ getSn_DPORT(sn); 
+ /** Retorna el registro de estado del socket (R) , 
+  * ejemplo -> Return : SOCK_LISTEN ->Modo Escucha, SOCK_ESTABLISHED -> Conexion Establecida, 
+  */
+ getSn_SR(uint8_t sn);
+ /**Retorna el registro de interrupción de socket (R) 
+  *ejem -> Evento cuando recibio datos -> Return: Sn_IR_RECV
+  */
+ getSn_IR(uint8_t sn);
+ /*Desconectar socket de conexión.*/
+ disconnec(uint8_t sn);
+ /*Cerrar socket.*/ 
+ close(uint8_t sn);
  ```
  - TCP funciones para envio y recepcion
  ```C++
- int32_t send(uint8_t sn, uint8_t * buf, uint16_t len); /*Envias datos al par conectado. Solo modo cliente o servidor TCP.*/
- int32_t recv(uint8_t sn, uint8_t * buf, uint16_t len) /*Reciba datos del par conectado. Solo modo cliente o servidor TCP.*/
+ /*Envia datos al par conectado. Solo modo cliente o servidor TCP.*/
+ int32_t send(uint8_t sn, uint8_t * buf, uint16_t len);
+ /*Recibe datos del par conectado. Solo modo cliente o servidor TCP.*/ 
+ int32_t recv(uint8_t sn, uint8_t * buf, uint16_t len) 
  ```
  - UDP funciones para envio y recepcion
  ```C++
- int32_t sendto(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t port); /*Envía un datagrama de UDP o MACRAW*/
- int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t *port) /*Reciba datagrama de UDP o MACRAW*/
+ /*Envía un datagrama de UDP o MACRAW*/
+ int32_t sendto(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t port); 
+ /*Recibe datagrama de UDP o MACRAW*/
+ int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t *port)
  ```
  - Funcion de ejemplo para conexion UDP
  ```C++
