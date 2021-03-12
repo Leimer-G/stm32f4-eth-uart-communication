@@ -35,18 +35,19 @@ Activamos el Periferico de comunicacion SPI. <br/>
 Para la STM32F4 DISCOVERY SHIELD usar MicroBus 3.
 
 - Activamos el modo Full-Duplex.
-- La velocidad menor a 80MHz.
-- Re-asignamos pines SPI1 para compatibilidad de MicroBus 3: PB3, PB4, PB5.
-- PE5 como salida para CS/SPI1, asignar label ETH_CS.
+- La velocidad debe ser menor a 80MHz.
+- Re-asignamos pines SPI1 para compatibilidad de MicroBus 3: PB3 -> SPI1_SCK, PB4 -> SPI1_MISO, PB5 -> SPI1_MOSI.
+- PE5 como salida para CS/SPI1, asignar label a ETH_CS.
 
 <div align="center">
   <image src="https://user-images.githubusercontent.com/74838411/110643368-05ebc080-8182-11eb-8812-278266628ae5.JPG" width=45%>
 </div>
   
-### UART Integrado STM32F4 DISCOVERY SHIELD
-Activamos el Periferico de comunicacion UART.
+### UART -> Integrado STM32F4 DISCOVERY SHIELD
+Activamos el Periferico de comunicacion UART2.
 - Activamos el modo Asynchronous
 - Velocidad 9600
+- Comprobar pines para compatibilidad de STM32F4 DISCOVERY SHIELD: PA2 -> USART2_TX, PA3 -> USART2_RX
 - En NVIC Settings activamos las interrupciones (UARTX global interrup)
 <div align="center">
   <image src="https://user-images.githubusercontent.com/74838411/110643369-071ced80-8182-11eb-9a48-51cd5460ac38.JPG" width=50%>
@@ -93,7 +94,7 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
     #include "socket.h"
     #include "wizchip_conf.h"
  ```
-  - Funciones necesarias para la comunicacion SPI y UART
+  - Funciones de usuario requeridas para la comunicacion SPI y UART
     - En las funciones UART_Printf modificar valor &huart2 por su UART_HandleTypeDef
     - En las funciones write_Buff, read_Buff modificar valor &hspi1 por su SPI_HandleTypeDef
  ```C++
@@ -150,7 +151,7 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
                            
   wizchip_setnetinfo(&net_info);
  ```
- - Descripcion de funciones 
+ - Descripcion general de funciones utilizadas 
  ```C++
  /*uint8_t sn -> numero del socket para el caso del chip W5500 va de 0~4*/
  int8_t socket(uint8_t sn, uint8_t protocol, uint16_t port, uint8_t flag)/*Crea el socket ejemplo-> socket(0, Sn_MR_TCP, 5000, 0))-> Abra el socket 0 como TCP_SOCKET con el   puerto 5000 */
@@ -174,7 +175,7 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
  int32_t sendto(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t port); /*Envía un datagrama de UDP o MACRAW*/
  int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t *port) /*Reciba datagrama de UDP o MACRAW*/
  ```
- - Funcion para conexion UDP
+ - Funcion de ejemplo para conexion UDP
  ```C++
  void conectar_Socket_UDP(uint8_t socketNum, uint16_t portLocal){
  /*Abra el socket 0 como TCP_SOCKET con el   puerto 5000*/
@@ -207,7 +208,7 @@ Generamos el codigo desde nuestra herramienta STM32 CubeMx y estaria listo la co
 						}
 					}
 				}
-        /*Compruebo si exiten datos recibidos por UART (Interrupcion)*/
+				/*Compruebo si exiten datos recibidos por UART (Interrupcion)*/
 				if (!okReceptionUart) {
 					okReceptionUart = 1;
 					/*Enviamos datos enviados de Uart por socket UDP*/
