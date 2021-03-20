@@ -26,7 +26,7 @@ Es posible que USB-UART de STM32F4 DISCOVERY SHIELD requiera la instalacion de d
 
 ## Software utilizado
 - Terminal Serial [Tera Term](https://ttssh2.osdn.jp/index.html.en) es un útil terminal de puerto serie.
-- [Hercules SETUP](https://www.hw-group.com/software/hercules-setup-utility) es un útil terminal de puerto serie (terminal RS-485 o RS-232), terminal UDP/IP y terminal TCP/IP Client Server. 
+- [Hercules SETUP](https://estliveupsedu-my.sharepoint.com/:u:/g/personal/lguambana_est_ups_edu_ec/ETWgmVHv8ONGpNTtj9s8T0cBl0tHABr1feX7CgpPJChgpg?e=ZladIP) es un útil terminal de puerto serie (terminal RS-485 o RS-232), terminal UDP/IP y terminal TCP/IP Client Server. 
 ## Creando proyecto CubeMx
 
 ### Modulo ETH Wiz 5500
